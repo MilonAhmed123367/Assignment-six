@@ -5,61 +5,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Green Earth</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="shortcut icon" href="assets/pngfind.com-world-globe-png-1269686.png" type="image/x-icon">
+
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="assets/pngfind.com-world-globe-png-1269686.png" type="image/x-icon">
+
+
+
 </head>
 
 <body>
-  <!-- bav bar --> 
+  <!-- bav bar -->
+  <div class="navbar bg-[#15803D] shadow-sm">
 
-  <nav class="bg-[#15803d] flex justify-between items-center p-5">
-
-    <div class="flex items-center gap-5 ml-20">
-      <img class="size-20" src="assets/tree.png" alt="">
-      <p class="text-2xl font-bold text-white">Green Earth</p>
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class=" btn btn-ghost sm:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke="white" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          <li>About</li>
+          <li>Gallery</li>
+          <li>Plant a Tree</li>
+        </ul>
+      </div>
+      <a class="btn btn-ghost text-xl text-white">Green Earth</a>
     </div>
 
-    <div class="flex gap-5 text-xl text-white">
-      <a href="">About</a>
-      <a href="">Gallery</a>
-      <a href="">Plant a Tree</a>
+    <div class="navbar-center hidden sm:flex">
+      <ul class="menu menu-horizontal px-1 gap-3 text-white">
+        <li>About</li>
+        <li>Gallery</li>
+        <li>Plant a Tree</li>
+      </ul>
     </div>
 
-
-    <div class="mr-20">
-      <button class="bg-amber-400 p-4 rounded-4xl
-       font-bold text-green-700 hover:bg-amber-100 text-2xl">Plant a Tree</button>
+    <div class="navbar-end">
+      <button class="btn btn-warning rounded-4xl">Plant a Tree</button>
     </div>
-  </nav>
+  </div>
 
   <!-- banner section -->
 
-  <section class="bg-[#CFF0DC] flex justify-between">
+  <section class="bg-[#CFF0DC] flex">
 
-    <div>
-      <img class="w-170" src="assets/hero-leaf1.png" alt="">
+    <div class="hidden sm:block">
+      <img class="w-180" src="assets/hero-leaf1.png" alt="">
     </div>
 
 
-    <div class="p-25">
+    <div class="text-center mt-10">
       <H1 class="font-bold text-6xl">Plant a Tree, Grow a Future</H1>
       <br>
       <p class="text-2xl text-gray-500">Join our mission to plant 1 million trees and make the Earth greener for future
-      generations.</p>
+        generations.</p>
       <br>
-      <button class="bg-amber-400 p-4 rounded-4xl
-       font-bold text-green-700 text-2xl ml-80">Plant a Tree</button>
+      <button class="btn btn-warning text-2xl p-8 rounded-4xl">Get Involved</button>
     </div>
 
 
-    <div>
-      <img class="w-170" src="assets/hero-leaf2.png" alt="">
+    <div class="hidden sm:block">
+      <img class="w-180" src="assets/hero-leaf2.png" alt="">
     </div>
 
   </section>
 
 
+  <section class="bg-[#F0FDF4]">
+
+    <section id="spiner" class="text-center items-center justify-center hidden">
+      <span class="loading loading-ring loading-xl"></span>
+    </section>
+
+    <h1 class="text-5xl font-bold text-center py-8">Choose Your Trees</h1>
+
+
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-[20%_1fr_20%]  gap-4 p-4 mx-24">
+
+      <!-- Categories -->
+      <div class="bg-gray-100 flex flex-col justify-start h-120">
+
+        <div id="categoryContainer" class="space-y-2">
+
+        </div>
+      </div>
+
+
+
+      <!-- Product Cards -->
+      <main id="cardContsiner" class="e grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 auto-rows-fr">
+
+
+      </main>
+
+
+
+      
+        <div class="bg-gray-50 p-4 space-y-7 max-h-[400px] overflow-y-auto">
+          <h1 class="font-bold text-3xl text-center">Your Cart</h1>
+          <div id="cartContainer" class="space-y-4">
+          </div>
+          <div class="text-xl font-bold text-center" id="cartTotal">Total: ৳0</div>
+        
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Open the modal using ID.showModal() method -->
+  <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+  <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+
+
+      <div id="details-container">
+
+      </div>
+
+
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
 
 
 
